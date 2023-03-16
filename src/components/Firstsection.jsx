@@ -2,15 +2,26 @@ import React, { useState } from "react";
 import Dropdown from "./Dropdown";
 import Normaldropdown from  "./Normaldropdown";
 import options from "../options.json";
+import {MdClose} from "react-icons/md"
 
 function Firstsection() {
+  //drop down state
   const [selectedOptions, setSelectedOptions] = useState({});
-
   const handleChange = (option, dropdownId) => {
     setSelectedOptions((prevState) => ({
       ...prevState,
       [dropdownId]: option,
     }));
+  };
+//input file state
+  const [pdfFile, setPdfFile] = useState(null);
+  const handleFileUpload = (event) => {
+    const file = event.target.files[0];
+    setPdfFile(file);
+  };
+
+  const handleRemovePdf = () => {
+    setPdfFile(null);
   };
 
   return (
@@ -111,19 +122,51 @@ function Firstsection() {
           <img src="./upload.svg" alt="" />
           <div className="upload-text">
             <p>Drag and drop your image here or</p>
-            <input
-              type="file"
-              accept="image/*"
-              required
-              placeholder="browsefile"
-            />
+            <input type="file" accept="image/*" required />
           </div>
         </div>
         <p className="ft-text">
           *Only JPG, PNG files are allowed. Image must be less than 2 MB
         </p>
       </div>
-      <div className="box-3"></div>
+      <div className="box-3">
+        <p className="text-grey">Training file</p>
+        <div className="doted-box">
+          <img src="./upload.svg" alt="" />
+          <div className="upload-text">
+            <p>Drag and drop your image here or</p>
+            <input
+              type="file"
+              accept="application/pdf"
+              required
+              onChange={handleFileUpload}
+            />
+          </div>
+        </div>
+        {pdfFile && (
+          <div className="pdf-box">
+            <div className="pdf-left">
+              <p className="done">Completed</p>
+              <p className="file-name">{pdfFile.name}</p>
+            </div>
+            <button className="pdf-close" onClick={handleRemovePdf}>
+              <MdClose />
+            </button>
+          </div>
+        )}
+        <p className="ft-text-1">
+          *Only Video, PDF and SlideShow files are allowed.
+        </p>
+        <div className="ft-text-2">
+          <hr />
+          <p>OR</p>
+          <hr />
+        </div>
+        <div className="media-box">
+          <p className="media-text">Media URL</p>
+          <input type="text" className="media-input" placeholder="Media link"/>
+        </div>
+      </div>
     </div>
   );
 }
