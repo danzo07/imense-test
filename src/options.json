@@ -1,0 +1,48 @@
+[
+  {
+    "id": "category",
+    "options": [
+      { "label": "safety 1", "value": "1", "image": "./security.svg" },
+      { "label": "safety 2", "value": "2", "image": "./security.svg" }
+    ]
+  },
+  {
+    "id": "topic",
+    "options": [
+      { "label": "VCA", "value": "1", "image": "./vca.svg" },
+      { "label": "VCA 2", "value": "2", "image": "./vca.svg" }
+    ]
+  },
+  {
+    "id": "years",
+    "options": [
+      { "label": "1 year", "value": "1" },
+      { "label": "2 year ", "value": "2" },
+      { "label": "3 year ", "value": "3" }
+    ]
+  },
+  {
+    "id": "work",
+    "options": [
+      { "label": "Internal workers", "value": "1" },
+      { "label": "Internal workers 2", "value": "2" },
+      { "label": "Internal workers 3", "value": "3" }
+    ]
+  },
+  {
+    "id": "departments",
+    "options": [
+      { "label": "departments 1", "value": "1" },
+      { "label": "departments 2", "value": "2" },
+      { "label": "departments 3", "value": "3" }
+    ]
+  },
+  {
+    "id": "functions",
+    "options": [
+      { "label": "functions 1", "value": "1" },
+      { "label": "functions 2", "value": "2" },
+      { "label": "functions 3", "value": "3" }
+    ]
+  }
+]
