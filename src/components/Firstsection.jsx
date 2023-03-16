@@ -1,29 +1,19 @@
-import React, { useState } from "react";
+import React, { useContext, useState } from "react";
 import Dropdown from "./Dropdown";
 import Normaldropdown from  "./Normaldropdown";
 import options from "../options.json";
 import {MdClose} from "react-icons/md"
+import { AppContext } from "../AppContext";
+
 
 function Firstsection() {
-  //drop down state
-  const [selectedOptions, setSelectedOptions] = useState({});
-  const handleChange = (option, dropdownId) => {
-    setSelectedOptions((prevState) => ({
-      ...prevState,
-      [dropdownId]: option,
-    }));
-  };
-//input file state
-  const [pdfFile, setPdfFile] = useState(null);
-  const handleFileUpload = (event) => {
-    const file = event.target.files[0];
-    setPdfFile(file);
-  };
-
-  const handleRemovePdf = () => {
-    setPdfFile(null);
-  };
-
+  const {
+    selectedOptions,
+    pdfFile,
+    handleChange,
+    handleFileUpload,
+    handleRemovePdf,
+  } = useContext(AppContext);
   return (
     <div className="grid-box">
       <div className="box-1">
@@ -118,31 +108,46 @@ function Firstsection() {
       </div>
       <div className="box-2">
         <p className="text-grey">Image</p>
-        <div className="doted-box">
+        <label className="doted-box" htmlFor="upload-1">
           <img src="./upload.svg" alt="" />
           <div className="upload-text">
-            <p>Drag and drop your image here or</p>
-            <input type="file" accept="image/*" required />
+            <p>
+              Drag and drop your image here or <span>browes files</span>
+            </p>
+            <input
+              className="upload-image"
+              type="file"
+              accept="image/*"
+              required
+              id="upload-1"
+            />
           </div>
-        </div>
+        </label>
         <p className="ft-text">
           *Only JPG, PNG files are allowed. Image must be less than 2 MB
         </p>
       </div>
       <div className="box-3">
         <p className="text-grey">Training file</p>
-        <div className="doted-box">
+        <label
+          className="doted-box"
+          htmlFor="upload-2"
+          onChange={handleFileUpload}
+        >
           <img src="./upload.svg" alt="" />
           <div className="upload-text">
-            <p>Drag and drop your image here or</p>
+            <p>
+              Drag and drop your image here or <span>browes files</span>
+            </p>
             <input
+              className="upload-image"
               type="file"
-              accept="application/pdf"
+              accept=".pdf"
               required
-              onChange={handleFileUpload}
+              id="upload-2"
             />
           </div>
-        </div>
+        </label>
         {pdfFile && (
           <div className="pdf-box">
             <div className="pdf-left">
@@ -164,7 +169,7 @@ function Firstsection() {
         </div>
         <div className="media-box">
           <p className="media-text">Media URL</p>
-          <input type="text" className="media-input" placeholder="Media link"/>
+          <input type="text" className="media-input" placeholder="Media link" />
         </div>
       </div>
     </div>

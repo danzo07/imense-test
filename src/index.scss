@@ -94,7 +94,7 @@ $third-color: #f8f8f8;
 }
 @mixin box-grid {
   display: grid;
-  grid-template-columns: 1fr 1fr;
+  grid-template-columns: 1fr 2fr;
 }
 @mixin dropdown-style {
   margin-top: 8px;
@@ -107,6 +107,38 @@ $third-color: #f8f8f8;
   box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.05), 0px 0px 2px rgba(0, 0, 0, 0.07),
     0px 0px 1px rgba(0, 0, 0, 0.05);
 }
+@mixin dotted-upload {
+  padding: 7px;
+  width: 100%;
+  height: 100%;
+  border: 2px dashed #b5b5b5;
+  border-radius: 4px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  cursor: pointer;
+  .upload-text {
+    max-width: 163px;
+    display: flex;
+    flex-direction: column;
+    p {
+      font-size: 12px;
+      font-weight: 400;
+      line-height: 17px;
+      letter-spacing: 0px;
+      text-align: center;
+      color: #b5b5b5;
+      span {
+        color: #1b8bce;
+      }
+    }
+    input {
+      display: none;
+    }
+  }
+}
+
 body {
   font-family: "Lato", sans-serif;
   background-color: $main-color;
@@ -402,6 +434,7 @@ header {
   display: grid;
   grid-template-columns: 2fr 1.5fr 1fr;
   gap: 5px;
+  margin-bottom: 14px;
 
   .box-1 {
     @include shadow-border-box();
@@ -438,6 +471,7 @@ header {
     }
 
     .box-years {
+      display: grid;
       font-weight: 600;
       color: #313131;
       .text-left {
@@ -562,42 +596,7 @@ header {
       margin-bottom: 18px;
     }
     .doted-box {
-      padding: 7px;
-      width: 100%;
-      height: 100%;
-      border: 2px dashed #b5b5b5;
-      border-radius: 4px;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      flex-direction: column;
-      .upload-text {
-        max-width: 163px;
-        display: flex;
-        flex-direction: column;
-        p {
-          font-size: 12px;
-          font-weight: 400;
-          line-height: 17px;
-          text-align: center;
-          color: #b5b5b5;
-        }
-        input {
-          font-family: "Roboto";
-          font-size: 12px;
-          font-weight: 400;
-          line-height: 17px;
-          color: #1b8bce;
-        }
-        input[type="file"]::file-selector-button {
-          margin-right: 20px;
-          border: none;
-          background-color: transparent;
-          color: #1b8bce;
-          cursor: pointer;
-          width: 100%;
-        }
-      }
+      @include dotted-upload();
     }
     .ft-text {
       font-size: 11px;
@@ -623,42 +622,7 @@ header {
       margin-bottom: 18px;
     }
     .doted-box {
-      padding: 7px;
-      width: 100%;
-      height: 100%;
-      border: 2px dashed #b5b5b5;
-      border-radius: 4px;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      flex-direction: column;
-      .upload-text {
-        max-width: 163px;
-        display: flex;
-        flex-direction: column;
-        p {
-          font-size: 12px;
-          font-weight: 400;
-          line-height: 17px;
-          text-align: center;
-          color: #b5b5b5;
-        }
-        input {
-          font-family: "Roboto";
-          font-size: 12px;
-          font-weight: 400;
-          line-height: 17px;
-          color: #1b8bce;
-        }
-        input[type="file"]::file-selector-button {
-          margin-right: 20px;
-          border: none;
-          background-color: transparent;
-          color: #1b8bce;
-          cursor: pointer;
-          width: 100%;
-        }
-      }
+      @include dotted-upload();
     }
     .pdf-box {
       margin-top: 10px;
@@ -745,5 +709,176 @@ header {
         padding: 7px 10px;
       }
     }
+  }
+}
+
+//second section style
+.secondsection-grid {
+  padding: 18px 24px;
+  @include shadow-border-box();
+  .header-text {
+    :nth-child(1) {
+      font-size: 13px;
+      font-weight: 600;
+      line-height: 16px;
+      color: #616161;
+      margin-bottom: 6px;
+    }
+    :nth-child(2) {
+      font-size: 11px;
+      font-weight: 500;
+      line-height: 13px;
+      color: #b4b4b4;
+      position: relative;
+      margin-bottom: 24px;
+      &::after {
+        position: absolute;
+        content: "";
+        width: 100%;
+        height: 1px;
+        background-color: #ebebeb;
+        bottom: -10px;
+        right: 0;
+        left: 0;
+      }
+    }
+  }
+  .qst-box {
+    margin-bottom: 14px;
+    background-color: $third-color;
+    border-radius: 5px;
+    padding: 22px 30px;
+    display: grid;
+    grid-template-columns: auto 1fr;
+    gap: 38px;
+    .qst-left {
+      max-width: 662px;
+      height: 100%;
+      .qst-text-number {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        margin-bottom: 10px;
+        p {
+          font-size: 15px;
+          font-weight: 700;
+          line-height: 17px;
+          color: #313131;
+        }
+        svg {
+          height: 18px;
+          width: 18px;
+          color: #c7c7c7;
+          cursor: pointer;
+        }
+      }
+      .qst-text-context {
+        background-color: $second-color;
+        border-radius: 5px;
+        padding: 16px;
+        margin-bottom: 10px;
+        p {
+          color: #616161;
+          font-size: 12px;
+          font-weight: 600;
+          line-height: 14px;
+        }
+      }
+      .qst-option {
+        margin-bottom: 8px;
+        background-color: $second-color;
+        border-radius: 5px;
+        padding: 6px 11px;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        .text-left {
+          color: #616161;
+          font-size: 12px;
+          font-weight: 600;
+          line-height: 14px;
+        }
+        .right-box {
+          display: flex;
+          align-items: center;
+          gap: 13px;
+          .svg-box {
+            background-color: #e8ffeb;
+            width: 26px;
+            height: 26px;
+            display: grid;
+            place-items: center;
+            transition: 300ms all ease-in;
+            border-radius: 2px;
+            cursor: pointer;
+            svg {
+              color: #b6f6c0;
+            }
+            &:hover {
+              background-color: #48ca5c;
+              svg {
+                color: #ffffff;
+              }
+            }
+          }
+          .small-upload {
+            display: grid;
+            grid-template-columns: 1fr;
+            label {
+              width: 26px;
+              height: 26px;
+              cursor: pointer;
+              img {
+                width: 100%;
+                height: 100%;
+              }
+            }
+            input {
+              display: none;
+            }
+          }
+        }
+      }
+    }
+    .qst-right {
+      display: flex;
+      flex-direction: column;
+      width: 100%;
+      height: 100%;
+      .qst-image-text {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        margin-bottom: 9px;
+        :nth-child(1) {
+          color: #616161;
+          font-size: 13px;
+          font-weight: 600;
+          line-height: 16px;
+        }
+        :nth-child(2) {
+          color: #b6b6b6;
+          font-size: 12px;
+          font-weight: 500;
+          line-height: 14px;
+        }
+      }
+      .doted-box {
+        @include dotted-upload();
+      }
+    }
+  }
+  .add-btn {
+    all: unset;
+    width: 100%;
+    height: 40px;
+    font-size: 16px;
+    font-weight: 700;
+    line-height: 17px;
+    background-color: #e1efff;
+    border-radius: 5px;
+    cursor: pointer;
+    color: #2c8eff;
+    text-align: center;
   }
 }

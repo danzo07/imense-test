@@ -376,6 +376,7 @@ header {
   display: grid;
   grid-template-columns: 2fr 1.5fr 1fr;
   gap: 5px;
+  margin-bottom: 14px;
 }
 .grid-box .box-1 {
   background-color: #ffffff;
@@ -391,7 +392,7 @@ header {
 }
 .grid-box .box-1 .box-category {
   display: grid;
-  grid-template-columns: 1fr 1fr;
+  grid-template-columns: 1fr 2fr;
 }
 .grid-box .box-1 .box-category .text-left {
   font-size: 12px;
@@ -416,7 +417,7 @@ header {
 }
 .grid-box .box-1 .box-topic {
   display: grid;
-  grid-template-columns: 1fr 1fr;
+  grid-template-columns: 1fr 2fr;
 }
 .grid-box .box-1 .box-topic .text-left {
   font-size: 12px;
@@ -440,6 +441,7 @@ header {
   grid-column: 1/3;
 }
 .grid-box .box-1 .box-years {
+  display: grid;
   font-weight: 600;
   color: #313131;
 }
@@ -508,7 +510,7 @@ header {
 }
 .grid-box .box-1 .dep-func .box-Departments {
   display: grid;
-  grid-template-columns: 1fr 1fr;
+  grid-template-columns: 1fr 2fr;
 }
 .grid-box .box-1 .dep-func .box-Departments .text-left {
   font-size: 12px;
@@ -531,7 +533,7 @@ header {
 }
 .grid-box .box-1 .dep-func .box-function {
   display: grid;
-  grid-template-columns: 1fr 1fr;
+  grid-template-columns: 1fr 2fr;
 }
 .grid-box .box-1 .dep-func .box-function .text-left {
   font-size: 12px;
@@ -606,6 +608,7 @@ header {
   align-items: center;
   justify-content: center;
   flex-direction: column;
+  cursor: pointer;
 }
 .grid-box .box-2 .doted-box .upload-text {
   max-width: 163px;
@@ -616,23 +619,15 @@ header {
   font-size: 12px;
   font-weight: 400;
   line-height: 17px;
+  letter-spacing: 0px;
   text-align: center;
   color: #b5b5b5;
 }
-.grid-box .box-2 .doted-box .upload-text input {
-  font-family: "Roboto";
-  font-size: 12px;
-  font-weight: 400;
-  line-height: 17px;
+.grid-box .box-2 .doted-box .upload-text p span {
   color: #1b8bce;
 }
-.grid-box .box-2 .doted-box .upload-text input[type=file]::file-selector-button {
-  margin-right: 20px;
-  border: none;
-  background-color: transparent;
-  color: #1b8bce;
-  cursor: pointer;
-  width: 100%;
+.grid-box .box-2 .doted-box .upload-text input {
+  display: none;
 }
 .grid-box .box-2 .ft-text {
   font-size: 11px;
@@ -669,6 +664,7 @@ header {
   align-items: center;
   justify-content: center;
   flex-direction: column;
+  cursor: pointer;
 }
 .grid-box .box-3 .doted-box .upload-text {
   max-width: 163px;
@@ -679,23 +675,15 @@ header {
   font-size: 12px;
   font-weight: 400;
   line-height: 17px;
+  letter-spacing: 0px;
   text-align: center;
   color: #b5b5b5;
 }
-.grid-box .box-3 .doted-box .upload-text input {
-  font-family: "Roboto";
-  font-size: 12px;
-  font-weight: 400;
-  line-height: 17px;
+.grid-box .box-3 .doted-box .upload-text p span {
   color: #1b8bce;
 }
-.grid-box .box-3 .doted-box .upload-text input[type=file]::file-selector-button {
-  margin-right: 20px;
-  border: none;
-  background-color: transparent;
-  color: #1b8bce;
-  cursor: pointer;
-  width: 100%;
+.grid-box .box-3 .doted-box .upload-text input {
+  display: none;
 }
 .grid-box .box-3 .pdf-box {
   margin-top: 10px;
@@ -779,4 +767,202 @@ header {
   font-weight: 600;
   line-height: 13px;
   padding: 7px 10px;
+}
+
+.secondsection-grid {
+  padding: 18px 24px;
+  background-color: #ffffff;
+  border-radius: 5px;
+  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.05), 0px 0px 2px rgba(0, 0, 0, 0.07), 0px 0px 1px rgba(0, 0, 0, 0.05);
+}
+.secondsection-grid .header-text :nth-child(1) {
+  font-size: 13px;
+  font-weight: 600;
+  line-height: 16px;
+  color: #616161;
+  margin-bottom: 6px;
+}
+.secondsection-grid .header-text :nth-child(2) {
+  font-size: 11px;
+  font-weight: 500;
+  line-height: 13px;
+  color: #b4b4b4;
+  position: relative;
+  margin-bottom: 24px;
+}
+.secondsection-grid .header-text :nth-child(2)::after {
+  position: absolute;
+  content: "";
+  width: 100%;
+  height: 1px;
+  background-color: #ebebeb;
+  bottom: -10px;
+  right: 0;
+  left: 0;
+}
+.secondsection-grid .qst-box {
+  margin-bottom: 14px;
+  background-color: #f8f8f8;
+  border-radius: 5px;
+  padding: 22px 30px;
+  display: grid;
+  grid-template-columns: auto 1fr;
+  gap: 38px;
+}
+.secondsection-grid .qst-box .qst-left {
+  max-width: 662px;
+  height: 100%;
+}
+.secondsection-grid .qst-box .qst-left .qst-text-number {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 10px;
+}
+.secondsection-grid .qst-box .qst-left .qst-text-number p {
+  font-size: 15px;
+  font-weight: 700;
+  line-height: 17px;
+  color: #313131;
+}
+.secondsection-grid .qst-box .qst-left .qst-text-number svg {
+  height: 18px;
+  width: 18px;
+  color: #c7c7c7;
+  cursor: pointer;
+}
+.secondsection-grid .qst-box .qst-left .qst-text-context {
+  background-color: #ffffff;
+  border-radius: 5px;
+  padding: 16px;
+  margin-bottom: 10px;
+}
+.secondsection-grid .qst-box .qst-left .qst-text-context p {
+  color: #616161;
+  font-size: 12px;
+  font-weight: 600;
+  line-height: 14px;
+}
+.secondsection-grid .qst-box .qst-left .qst-option {
+  margin-bottom: 8px;
+  background-color: #ffffff;
+  border-radius: 5px;
+  padding: 6px 11px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.secondsection-grid .qst-box .qst-left .qst-option .text-left {
+  color: #616161;
+  font-size: 12px;
+  font-weight: 600;
+  line-height: 14px;
+}
+.secondsection-grid .qst-box .qst-left .qst-option .right-box {
+  display: flex;
+  align-items: center;
+  gap: 13px;
+}
+.secondsection-grid .qst-box .qst-left .qst-option .right-box .svg-box {
+  background-color: #e8ffeb;
+  width: 26px;
+  height: 26px;
+  display: grid;
+  place-items: center;
+  transition: 300ms all ease-in;
+  border-radius: 2px;
+  cursor: pointer;
+}
+.secondsection-grid .qst-box .qst-left .qst-option .right-box .svg-box svg {
+  color: #b6f6c0;
+}
+.secondsection-grid .qst-box .qst-left .qst-option .right-box .svg-box:hover {
+  background-color: #48ca5c;
+}
+.secondsection-grid .qst-box .qst-left .qst-option .right-box .svg-box:hover svg {
+  color: #ffffff;
+}
+.secondsection-grid .qst-box .qst-left .qst-option .right-box .small-upload {
+  display: grid;
+  grid-template-columns: 1fr;
+}
+.secondsection-grid .qst-box .qst-left .qst-option .right-box .small-upload label {
+  width: 26px;
+  height: 26px;
+  cursor: pointer;
+}
+.secondsection-grid .qst-box .qst-left .qst-option .right-box .small-upload label img {
+  width: 100%;
+  height: 100%;
+}
+.secondsection-grid .qst-box .qst-left .qst-option .right-box .small-upload input {
+  display: none;
+}
+.secondsection-grid .qst-box .qst-right {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  height: 100%;
+}
+.secondsection-grid .qst-box .qst-right .qst-image-text {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 9px;
+}
+.secondsection-grid .qst-box .qst-right .qst-image-text :nth-child(1) {
+  color: #616161;
+  font-size: 13px;
+  font-weight: 600;
+  line-height: 16px;
+}
+.secondsection-grid .qst-box .qst-right .qst-image-text :nth-child(2) {
+  color: #b6b6b6;
+  font-size: 12px;
+  font-weight: 500;
+  line-height: 14px;
+}
+.secondsection-grid .qst-box .qst-right .doted-box {
+  padding: 7px;
+  width: 100%;
+  height: 100%;
+  border: 2px dashed #b5b5b5;
+  border-radius: 4px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  cursor: pointer;
+}
+.secondsection-grid .qst-box .qst-right .doted-box .upload-text {
+  max-width: 163px;
+  display: flex;
+  flex-direction: column;
+}
+.secondsection-grid .qst-box .qst-right .doted-box .upload-text p {
+  font-size: 12px;
+  font-weight: 400;
+  line-height: 17px;
+  letter-spacing: 0px;
+  text-align: center;
+  color: #b5b5b5;
+}
+.secondsection-grid .qst-box .qst-right .doted-box .upload-text p span {
+  color: #1b8bce;
+}
+.secondsection-grid .qst-box .qst-right .doted-box .upload-text input {
+  display: none;
+}
+.secondsection-grid .add-btn {
+  all: unset;
+  width: 100%;
+  height: 40px;
+  font-size: 16px;
+  font-weight: 700;
+  line-height: 17px;
+  background-color: #e1efff;
+  border-radius: 5px;
+  cursor: pointer;
+  color: #2c8eff;
+  text-align: center;
 }/*# sourceMappingURL=index.css.map */

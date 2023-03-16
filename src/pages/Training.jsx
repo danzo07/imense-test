@@ -1,5 +1,6 @@
 import React from "react";
 import Firstsection from "../components/Firstsection";
+import Secondsection from "../components/Secondsection";
 
 function Training() {
   return (
@@ -12,9 +13,9 @@ function Training() {
             <button className="Update-btn">Update and save</button>
           </div>
         </div>
-        <Firstsection/>
+        <Firstsection />
+        <Secondsection />
       </div>
-
     </div>
   );
 }
