@@ -18,20 +18,17 @@ const AppContextProvider = ({ children }) => {
     const file = event.target.files[0];
     setPdfFile(file);
   };
-
   const handleRemovePdf = () => {
     setPdfFile(null);
   };
 
 //question state
   const [numQuestions, setNumQuestions] = useState(1);
-
   const handleAddQuestion = () => {
     if (numQuestions < 5) {
       setNumQuestions(numQuestions + 1);
     }
   };
-
   const handleRemoveQuestion = (index) => {
     if (numQuestions > 1) {
       setNumQuestions(numQuestions - 1);

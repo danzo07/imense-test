@@ -101,6 +101,7 @@ header {
   top: 0;
   right: 0;
   left: 0;
+  z-index: 1000;
 }
 
 .navbar {
@@ -774,6 +775,7 @@ header {
   background-color: #ffffff;
   border-radius: 5px;
   box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.05), 0px 0px 2px rgba(0, 0, 0, 0.07), 0px 0px 1px rgba(0, 0, 0, 0.05);
+  margin-bottom: 14px;
 }
 .secondsection-grid .header-text :nth-child(1) {
   font-size: 13px;
@@ -906,7 +908,7 @@ header {
 }
 .secondsection-grid .qst-box .qst-right .qst-image-text {
   display: flex;
-  align-items: center;
+  align-items: baseline;
   justify-content: space-between;
   margin-bottom: 9px;
 }
@@ -965,4 +967,86 @@ header {
   cursor: pointer;
   color: #2c8eff;
   text-align: center;
+}
+
+.slide-item {
+  width: 100%;
+  height: 156px;
+  background-color: #ffffff;
+  border-radius: 5px;
+  position: relative;
+}
+.slide-item .info {
+  position: absolute;
+  top: 10px;
+  right: 7px;
+}
+.slide-item .content-box {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  justify-content: center;
+  gap: 16px;
+}
+.slide-item .content-box .counter {
+  display: flex;
+  gap: 5px;
+}
+.slide-item .content-box .counter .minus,
+.slide-item .content-box .counter .plus {
+  all: unset;
+  cursor: pointer;
+  width: 34px;
+  height: 30px;
+  border-radius: 5px;
+  background-color: #f1f1f1;
+  display: grid;
+  place-items: center;
+}
+.slide-item .content-box .counter .minus svg,
+.slide-item .content-box .counter .plus svg {
+  color: #c8c8c8;
+}
+.slide-item .content-box .counter .value-box {
+  width: 76px;
+  border-radius: 5px;
+  border: 1px solid #2c8eff;
+  display: flex;
+}
+.slide-item .content-box .counter .value-box .input-box {
+  width: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+}
+.slide-item .content-box .counter .value-box .input-box p {
+  color: #2c8eff;
+}
+.slide-item .content-box .counter .value-box .type-box {
+  width: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+}
+.slide-item .content-box .counter .value-box .type-box p {
+  font-size: 14px;
+  font-weight: 600;
+  color: #2c8eff;
+}
+
+.progress-bar-container {
+  margin-top: 11px;
+  background-color: #e1ebf0;
+  width: 100%;
+  height: 4px;
+  position: relative;
+}
+.progress-bar-container .progress-bar {
+  position: absolute;
+  height: 4px;
+  right: 0;
+  top: 0;
+  background-color: #2C8EFF;
 }/*# sourceMappingURL=index.css.map */

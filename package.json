@@ -9,6 +9,7 @@
     "preview": "vite preview"
   },
   "dependencies": {
+    "@splidejs/react-splide": "^0.7.12",
     "autoprefixer": "^10.4.14",
     "framer-motion": "^10.3.1",
     "postcss": "^8.4.21",
