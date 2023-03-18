@@ -1146,6 +1146,9 @@ header {
     height: auto;
     overflow: auto;
   }
+  .progress-bar-container {
+    width: 80%;
+  }
   .splide__arrows {
     .splide__arrow--prev {
       position: absolute;
@@ -1179,6 +1182,9 @@ header {
     width: 50%;
     height: auto;
     overflow: auto;
+  }
+  .progress-bar-container {
+    width: 50%;
   }
   header {
     .navbar-imense {
@@ -1246,6 +1252,9 @@ header {
     width: 25%;
     height: auto;
     overflow: auto;
+  }
+  .progress-bar-container {
+    width: 25%;
   }
   header {
     .navbar-imense {
