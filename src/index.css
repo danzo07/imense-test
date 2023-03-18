@@ -83,6 +83,7 @@ body {
   font-family: "Lato", sans-serif;
   background-color: #f8fafd;
   position: relative;
+  overflow-x: hidden;
 }
 
 .App {
@@ -102,6 +103,7 @@ header {
   right: 0;
   left: 0;
   z-index: 1000;
+  width: 100%;
 }
 
 .navbar {
