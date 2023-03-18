@@ -150,7 +150,7 @@ body {
   height: 100dvh;
 }
 
-//navbar style
+//navbar-imense style
 header {
   height: 70px;
   background-color: $second-color;
@@ -166,7 +166,7 @@ header {
   width: 100%;
 }
 
-.navbar {
+.navbar-imense {
   width: 1205px;
   height: 42px;
   display: flex;
@@ -1162,7 +1162,7 @@ header {
     }
   }
   header {
-    .navbar {
+    .navbar-imense {
       .nav-bar {
         padding: 0px 10px;
       }
@@ -1179,7 +1179,7 @@ header {
     overflow: auto;
   }
   header {
-    .navbar {
+    .navbar-imense {
       .right-nav {
         gap: 10px;
         .user {
@@ -1211,7 +1211,7 @@ header {
 }
 @media only screen and (max-width: 893px) {
   header {
-    .navbar {
+    .navbar-imense {
       .nav-bar {
         display: none;
       }
@@ -1246,7 +1246,7 @@ header {
     overflow: auto;
   }
   header {
-    .navbar {
+    .navbar-imense {
       .logo {
         min-width: 85px;
         width: 85px;

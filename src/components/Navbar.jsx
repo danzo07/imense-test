@@ -13,10 +13,10 @@ function Navbar() {
   const handleUserClick = () => {
     setShowMenu(!showMenu);
   };
-    const [showMenumobile, setShowMenumobile] = useState(false);
-    const handleUserClickmobile = () => {
-      setShowMenumobile(!showMenumobile);
-    };
+  const [showMenumobile, setShowMenumobile] = useState(false);
+  const handleUserClickmobile = () => {
+    setShowMenumobile(!showMenumobile);
+  };
 
   // lang object
   const options = [
@@ -38,7 +38,7 @@ function Navbar() {
 
   return (
     <header>
-      <nav className="navbar">
+      <nav className="navbar-imense">
         <div className="logo">
           <NavLink to={"/"}>
             <img src="/logo.svg" alt="logo" />
@@ -77,7 +77,11 @@ function Navbar() {
           </div>
           <div className="lang">
             <div className="dropdown__selected" onClick={handleLangClick}>
-              <img className="lang-image" src={selectedOption.imageSrc} alt={selectedOption.label} />
+              <img
+                className="lang-image"
+                src={selectedOption.imageSrc}
+                alt={selectedOption.label}
+              />
               {showLang && (
                 <motion.div
                   className="dropdown__options"
