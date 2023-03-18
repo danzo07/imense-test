@@ -17,8 +17,8 @@ function Training() {
         </div>
         <Firstsection />
         <Secondsection />
-        <Thirdsection/>
       </div>
+      <Thirdsection />
     </div>
   );
 }

@@ -16,7 +16,19 @@ const Slide = ({ children }) => {
   return (
     <div className="slide-wrapper">
       <Splide
-        options={{  perPage: 6, gap: 9, pagination: false }}
+        options={{
+          perPage: 6,
+          gap: 9,
+          pagination: false,
+          breakpoints: {
+            1095: {
+              perPage: 3,
+            },
+            573: {
+              perPage: 1,
+            }
+          },
+        }}
         onMove={handleSlideChange}
       >
         {React.Children.map(children, (child) => (

@@ -77,7 +77,7 @@ function Navbar() {
           </div>
           <div className="lang">
             <div className="dropdown__selected" onClick={handleLangClick}>
-              <img src={selectedOption.imageSrc} alt={selectedOption.label} />
+              <img className="lang-image" src={selectedOption.imageSrc} alt={selectedOption.label} />
               {showLang && (
                 <motion.div
                   className="dropdown__options"
@@ -148,18 +148,26 @@ function Navbar() {
               transition={{ duration: 0.2 }}
             >
               <ul className="dropdown-list-mobile">
-                <li className="dl_1">
-                  <p>Dashboard</p>
-                </li>
-                <li className="dl_2">
-                  <p>Profile settings</p>
-                </li>
-                <li className="dl_3">
-                  <p>Our policies</p>
-                </li>
-                <li className="dl_4">
-                  <p>Lougout</p>
-                </li>
+                <NavLink to={"Dashboard"}>
+                  <li className="mb_1">
+                    <p>Dashboard</p>
+                  </li>
+                </NavLink>
+                <NavLink to={"/"}>
+                  <li className="mb_2">
+                    <p>Trainings</p>
+                  </li>
+                </NavLink>
+                <NavLink to={"/Users"}>
+                  <li className="mb_3">
+                    <p>Users</p>
+                  </li>
+                </NavLink>
+                <NavLink to={"/More"}>
+                  <li className="mb_4">
+                    <p>More</p>
+                  </li>
+                </NavLink>
               </ul>
             </motion.div>
           )}

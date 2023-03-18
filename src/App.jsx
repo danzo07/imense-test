@@ -11,7 +11,6 @@ function App() {
           <Navbar />
           <Pages />
         </div>
-        ;
       </BrowserRouter>
     </AppContextProvider>
   );
