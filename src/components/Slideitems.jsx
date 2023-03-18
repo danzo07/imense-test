@@ -1,6 +1,6 @@
-import React from "react";
-import{AiOutlineMinus} from "react-icons/ai"
-import {AiOutlinePlus} from "react-icons/ai";
+import React, { useState } from "react";
+import { AiOutlineMinus } from "react-icons/ai";
+import { AiOutlinePlus } from "react-icons/ai";
 
 function Slideitems({
   imsgsrc,
@@ -11,32 +11,51 @@ function Slideitems({
   onIncrement,
   onDecrement,
   renderDifferentDiv,
+  itemContent,
 }) {
+  const [showinfo, setInfo] = useState(false);
+
+  const handleUserClick = () => {
+    setInfo(!showinfo);
+  };
+
   return (
     <div className="slide-item">
-      <img src="./info.svg" alt="" className="info" />
+      <div className="slide-item-info" onClick={handleUserClick}>
+        <img src="./info.svg" alt="" className="info" />
+      </div>
+      {showinfo && (
+        <div className="slide-item-content">
+          <p>{itemContent}</p>
+        </div>
+      )}
       <div className="content-box">
         <img src={imsgsrc} alt="" />
         <p>{text}</p>
         <div className="counter">
-          <button className="minus" onClick={() => onDecrement(index)}>
-            <AiOutlineMinus />
-          </button>
           {renderDifferentDiv ? (
-            <div>This is a different.</div>
+            <div className="toggle-switch">
+              <input type="checkbox" id="switch" />
+              <label for="switch">Toggle</label>
+            </div>
           ) : (
             <div className="value-box">
-              <div className="input-box">
-                <p>{counter}</p>
+              <button className="minus" onClick={() => onDecrement(index)}>
+                <AiOutlineMinus />
+              </button>
+              <div className="blue-border">
+                <div className="input-box">
+                  <p>{counter}</p>
+                </div>
+                <div className="type-box">
+                  <p>{type}</p>
+                </div>
               </div>
-              <div className="type-box">
-                <p>{type}</p>
-              </div>
+              <button className="plus" onClick={() => onIncrement(index)}>
+                <AiOutlinePlus />
+              </button>
             </div>
           )}
-          <button className="plus" onClick={() => onIncrement(index)}>
-            <AiOutlinePlus />
-          </button>
         </div>
       </div>
     </div>

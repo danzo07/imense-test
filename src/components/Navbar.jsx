@@ -3,16 +3,20 @@ import { FiSearch } from "react-icons/fi";
 import { IoMdNotificationsOutline, IoMdSettings } from "react-icons/io";
 import { MdPolicy } from "react-icons/md";
 import { RiLogoutBoxRFill } from "react-icons/ri";
+import { FiMenu } from "react-icons/fi";
 import { motion } from "framer-motion";
 import { NavLink } from "react-router-dom";
 
 function Navbar() {
   //user menu state
   const [showMenu, setShowMenu] = useState(false);
-
   const handleUserClick = () => {
     setShowMenu(!showMenu);
   };
+    const [showMenumobile, setShowMenumobile] = useState(false);
+    const handleUserClickmobile = () => {
+      setShowMenumobile(!showMenumobile);
+    };
 
   // lang object
   const options = [
@@ -36,7 +40,9 @@ function Navbar() {
     <header>
       <nav className="navbar">
         <div className="logo">
-          <img src="/logo.svg" alt="logo" />
+          <NavLink to={"/"}>
+            <img src="/logo.svg" alt="logo" />
+          </NavLink>
         </div>
         <div className="search-bar">
           <div className="search-icon">
@@ -70,10 +76,7 @@ function Navbar() {
             <IoMdNotificationsOutline />
           </div>
           <div className="lang">
-            <div
-              className="dropdown__selected"
-              onClick={handleLangClick}
-            >
+            <div className="dropdown__selected" onClick={handleLangClick}>
               <img src={selectedOption.imageSrc} alt={selectedOption.label} />
               {showLang && (
                 <motion.div
@@ -98,7 +101,6 @@ function Navbar() {
               )}
             </div>
           </div>
-
           <div className="user" onClick={handleUserClick}>
             {showMenu && (
               <motion.div
@@ -135,6 +137,32 @@ function Navbar() {
               <p className="user-role">Administrator</p>
             </div>
           </div>
+        </div>
+        <div className="menu-mobile" onClick={handleUserClickmobile}>
+          <FiMenu />
+          {showMenumobile && (
+            <motion.div
+              className="user-dropdown-mobile"
+              initial={{ opacity: 0, y: -20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.2 }}
+            >
+              <ul className="dropdown-list-mobile">
+                <li className="dl_1">
+                  <p>Dashboard</p>
+                </li>
+                <li className="dl_2">
+                  <p>Profile settings</p>
+                </li>
+                <li className="dl_3">
+                  <p>Our policies</p>
+                </li>
+                <li className="dl_4">
+                  <p>Lougout</p>
+                </li>
+              </ul>
+            </motion.div>
+          )}
         </div>
       </nav>
     </header>

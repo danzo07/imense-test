@@ -3,18 +3,18 @@ import Slide from "./Slide";
 import Slideitems from "./Slideitems";
 
 function Thirdsection() {
-  const [counters, setCounters] = useState([0, 0, 0, 0, 0,0]);
+  const [counters, setCounters] = useState([0, 0, 0, 0, 0, 0]);
 
   const handleIncrement = (index) => {
     const newCounters = [...counters];
     newCounters[index] += 1;
     setCounters(newCounters);
   };
-    const handleDecrement = (index) => {
-      const newCounters = [...counters];
-      newCounters[index] -= 1;
-      setCounters(newCounters);
-    };
+  const handleDecrement = (index) => {
+    const newCounters = [...counters];
+    newCounters[index] -= 1;
+    setCounters(newCounters);
+  };
   return (
     <Slide>
       <Slideitems
@@ -25,6 +25,7 @@ function Thirdsection() {
         counter={counters[0]}
         onIncrement={handleIncrement}
         onDecrement={handleDecrement}
+        itemContent="Choose number of questions"
       />
       <Slideitems
         imsgsrc="./time.svg"
@@ -34,6 +35,7 @@ function Thirdsection() {
         onIncrement={handleIncrement}
         onDecrement={handleDecrement}
         type="s"
+        itemContent="When the countdown is finished, the system will automatically move to the next question."
       />
       <Slideitems
         imsgsrc="./checkmark.svg"
@@ -43,6 +45,7 @@ function Thirdsection() {
         counter={counters[2]}
         onIncrement={handleIncrement}
         onDecrement={handleDecrement}
+        itemContent="Passing score purcantages"
       />
       <Slideitems
         imsgsrc="./camera.svg"
@@ -51,6 +54,7 @@ function Thirdsection() {
         index={3}
         counter={counters[3]}
         renderDifferentDiv
+        itemContent="Turn on or off"
       />
       <Slideitems
         imsgsrc="./time2.svg"
@@ -60,6 +64,7 @@ function Thirdsection() {
         counter={counters[4]}
         onIncrement={handleIncrement}
         onDecrement={handleDecrement}
+        itemContent="Time expected in minutes"
       />
       <Slideitems
         imsgsrc="./attempt.svg"
@@ -69,6 +74,7 @@ function Thirdsection() {
         counter={counters[5]}
         onIncrement={handleIncrement}
         onDecrement={handleDecrement}
+        itemContent="Number of attempts"
       />
     </Slide>
   );
