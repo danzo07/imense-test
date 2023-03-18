@@ -953,6 +953,13 @@ header {
 .slide-wrapper {
   max-width: 1080px;
   padding: 0px 10px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+.splide {
+  width: 100%;
 }
 .slide-item {
   width: 100%;
@@ -1134,11 +1141,6 @@ header {
   }
 }
 @media only screen and (max-width: 1095px) {
-  .slide-wrapper {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-  }
   .splide {
     width: 80%;
     height: auto;
