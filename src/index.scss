@@ -146,8 +146,7 @@ body {
   overflow-x: hidden;
 }
 .App {
-  height: 100vh;
-  height: 100dvh;
+  height: 100%;
 }
 
 //navbar-imense style
@@ -950,14 +949,23 @@ header {
 }
 
 //third section style
-.slide-wrapper {
-  max-width: 1080px;
-  padding: 0px 10px;
+
+.slide-container {
+  width: 100%;
   display: flex;
-  flex-direction: column;
   align-items: center;
   justify-content: center;
+  .slide-wrapper {
+    width: 100%;
+    max-width: 1080px;
+    padding: 0px 10px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+  }
 }
+
 .splide {
   width: 100%;
 }
@@ -1141,18 +1149,10 @@ header {
   }
 }
 @media only screen and (max-width: 1095px) {
-  .splide {
-    width: 80%;
-    height: auto;
-    overflow: auto;
-  }
-  .progress-bar-container {
-    width: 80%;
-  }
   .splide__arrows {
     .splide__arrow--prev {
       position: absolute;
-      left: 22px;
+      left: 2px;
       width: 34px;
       height: 30px;
       background-color: #ffffff;
@@ -1178,14 +1178,6 @@ header {
   }
 }
 @media only screen and (max-width: 893px) {
-  .splide {
-    width: 50%;
-    height: auto;
-    overflow: auto;
-  }
-  .progress-bar-container {
-    width: 50%;
-  }
   header {
     .navbar-imense {
       .right-nav {
@@ -1217,6 +1209,7 @@ header {
     }
   }
 }
+
 @media only screen and (max-width: 893px) {
   header {
     .navbar-imense {
@@ -1247,14 +1240,20 @@ header {
     }
   }
 }
+
 @media only screen and (max-width: 573px) {
   .splide {
-    width: 25%;
+    width: 70%;
     height: auto;
     overflow: auto;
   }
+  .splide__arrows {
+    .splide__arrow--prev {
+      left: 2px;
+    }
+  }
   .progress-bar-container {
-    width: 25%;
+    width: 70%;
   }
   header {
     .navbar-imense {
@@ -1300,5 +1299,20 @@ header {
     .qst-box {
       grid-template-columns: 1fr;
     }
+  }
+}
+@media only screen and (max-width: 573px) {
+.splide {
+    width: 100%;
+    height: auto;
+    overflow: auto;
+  }
+  .splide__arrows {
+    .splide__arrow--prev {
+      left: 2px;
+    }
+  }
+  .progress-bar-container {
+    width: 100%;
   }
 }

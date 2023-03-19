@@ -3,7 +3,6 @@ import Firstsection from "../components/Firstsection";
 import Secondsection from "../components/Secondsection";
 import Thirdsection from "../components/Thirdsection";
 
-
 function Training() {
   return (
     <div className="training">

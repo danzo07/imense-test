@@ -14,29 +14,31 @@ const Slide = ({ children }) => {
   };
 
   return (
-    <div className="slide-wrapper">
-      <Splide
-        options={{
-          perPage: 6,
-          gap: 9,
-          pagination: false,
-          breakpoints: {
-            1095: {
-              perPage: 3,
+    <div className="slide-container">
+      <div className="slide-wrapper">
+        <Splide
+          options={{
+            perPage: 6,
+            gap: 9,
+            pagination: false,
+            breakpoints: {
+              1095: {
+                perPage: 3,
+              },
+              573: {
+                perPage: 1,
+              },
             },
-            573: {
-              perPage: 1,
-            }
-          },
-        }}
-        onMove={handleSlideChange}
-      >
-        {React.Children.map(children, (child) => (
-          <SplideSlide>{child}</SplideSlide>
-        ))}
-      </Splide>
-      <div className="progress-bar-container">
-        <div className="progress-bar" style={progressBarStyle}></div>
+          }}
+          onMove={handleSlideChange}
+        >
+          {React.Children.map(children, (child) => (
+            <SplideSlide>{child}</SplideSlide>
+          ))}
+        </Splide>
+        <div className="progress-bar-container">
+          <div className="progress-bar" style={progressBarStyle}></div>
+        </div>
       </div>
     </div>
   );
