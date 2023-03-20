@@ -1,12 +1,11 @@
-import React, { useContext } from 'react'
-import {MdClose} from "react-icons/md"
-import {BsCheckLg} from "react-icons/bs"
+import React, { useContext } from "react";
+import { MdClose } from "react-icons/md";
+import { BsCheckLg } from "react-icons/bs";
 import { AppContext } from "../AppContext";
-
 
 function Question({ index }) {
   const { handleRemoveQuestion } = useContext(AppContext);
-
+  //we can use anonymous fucntion
   const handleRemove = () => {
     handleRemoveQuestion(index);
   };
@@ -15,7 +14,6 @@ function Question({ index }) {
       <div className="qst-left">
         <div className="qst-text-number">
           <p>Question 1</p>
-          //we can use anonymous fucntion
           <MdClose onClick={handleRemove} />
         </div>
         <div className="qst-text-context">
@@ -34,7 +32,12 @@ function Question({ index }) {
               <label htmlFor="small-upload-1">
                 <img src="./upload-small.svg" alt="" />
               </label>
-              <input id="small-upload-1" type="file" accept="image/*" required />
+              <input
+                id="small-upload-1"
+                type="file"
+                accept="image/*"
+                required
+              />
             </div>
           </div>
         </div>
@@ -78,4 +81,4 @@ function Question({ index }) {
   );
 }
 
-export default Question
+export default Question;
