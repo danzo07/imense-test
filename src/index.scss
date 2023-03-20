@@ -1036,13 +1036,16 @@ header {
             bottom: -5px;
             width: 30px;
             height: 30px;
-            background: #47ca5b;
+            background: #dddddd;
             border-radius: 50%;
             transition: 200ms all ease-in;
           }
         }
         input:checked + label {
           background: #daffdf;
+          &::after{
+            background-color: #47ca5b;
+          }
         }
 
         input:checked + label:after {
@@ -1302,7 +1305,7 @@ header {
   }
 }
 @media only screen and (max-width: 573px) {
-.splide {
+  .splide {
     width: 100%;
     height: auto;
     overflow: auto;

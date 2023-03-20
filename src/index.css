@@ -1125,12 +1125,15 @@ header {
   bottom: -5px;
   width: 30px;
   height: 30px;
-  background: #47ca5b;
+  background: #dddddd;
   border-radius: 50%;
   transition: 200ms all ease-in;
 }
 .slide-item .content-box .counter .toggle-switch input:checked + label {
   background: #daffdf;
+}
+.slide-item .content-box .counter .toggle-switch input:checked + label::after {
+  background-color: #47ca5b;
 }
 .slide-item .content-box .counter .toggle-switch input:checked + label:after {
   left: 100%;

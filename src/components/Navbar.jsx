@@ -7,15 +7,29 @@ import { FiMenu } from "react-icons/fi";
 import { motion } from "framer-motion";
 import { NavLink } from "react-router-dom";
 
+
+
+
 function Navbar() {
   //user menu state
   const [showMenu, setShowMenu] = useState(false);
-  const handleUserClick = () => {
-    setShowMenu(!showMenu);
-  };
   const [showMenumobile, setShowMenumobile] = useState(false);
-  const handleUserClickmobile = () => {
-    setShowMenumobile(!showMenumobile);
+  const [showLang, setShowLang] = useState(false);
+
+  const handleMenuClick = (menuName) => {
+    switch (menuName) {
+      case "user":
+        setShowMenu(!showMenu);
+        break;
+      case "user-mobile":
+        setShowMenumobile(!showMenumobile);
+        break;
+      case "lang":
+        setShowLang(!showLang);
+        break;
+      default:
+        break;
+    }
   };
 
   // lang object
@@ -26,14 +40,10 @@ function Navbar() {
     { label: "Spain", value: "4", imageSrc: "./spain.svg" },
     { label: "Germany", value: "5", imageSrc: "./germany.svg" },
   ];
+  
   const [selectedOption, setSelectedOption] = useState(options[0]);
   const handleOptionClick = (option) => {
     setSelectedOption(option);
-  };
-  //lang menu state
-  const [showLang, setShowLang] = useState(false);
-  const handleLangClick = () => {
-    setShowLang(!showLang);
   };
 
   return (
@@ -76,7 +86,10 @@ function Navbar() {
             <IoMdNotificationsOutline />
           </div>
           <div className="lang">
-            <div className="dropdown__selected" onClick={handleLangClick}>
+            <div
+              className="dropdown__selected"
+              onClick={() => handleMenuClick("lang")}
+            >
               <img
                 className="lang-image"
                 src={selectedOption.imageSrc}
@@ -92,6 +105,7 @@ function Navbar() {
                   {options.map((option) => (
                     <li
                       key={option.value}
+                      //the "className" of each "li" element is conditionally set to "selected" if the option being rendered is the currently selected option. This highlights the selected option in the dropdown menu.
                       className={`dropdown__option ${
                         option.value === selectedOption.value ? "selected" : ""
                       }`}
@@ -105,7 +119,7 @@ function Navbar() {
               )}
             </div>
           </div>
-          <div className="user" onClick={handleUserClick}>
+          <div className="user" onClick={() => handleMenuClick("user")}>
             {showMenu && (
               <motion.div
                 className="user-dropdown"
@@ -142,7 +156,10 @@ function Navbar() {
             </div>
           </div>
         </div>
-        <div className="menu-mobile" onClick={handleUserClickmobile}>
+        <div
+          className="menu-mobile"
+          onClick={() => handleMenuClick("user-mobile")}
+        >
           <FiMenu />
           {showMenumobile && (
             <motion.div

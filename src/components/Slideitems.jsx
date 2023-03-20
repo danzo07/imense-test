@@ -36,11 +36,11 @@ function Slideitems({
           {renderDifferentDiv ? (
             <div className="toggle-switch">
               <input type="checkbox" id="switch" />
-              <label for="switch">Toggle</label>
+              <label htmlFor="switch">Toggle</label>
             </div>
           ) : (
             <div className="value-box">
-              <button className="minus" onClick={() => onDecrement(index)}>
+              <button name="minus" className="minus" onClick={() => onDecrement(index)}>
                 <AiOutlineMinus />
               </button>
               <div className="blue-border">
@@ -51,7 +51,7 @@ function Slideitems({
                   <p>{type}</p>
                 </div>
               </div>
-              <button className="plus" onClick={() => onIncrement(index)}>
+              <button name="plus" className="plus" onClick={() => onIncrement(index)}>
                 <AiOutlinePlus />
               </button>
             </div>

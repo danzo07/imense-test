@@ -1,6 +1,5 @@
-import React, { useContext, useState } from "react";
+import React, { useContext} from "react";
 import Dropdown from "./Dropdown";
-import Normaldropdown from  "./Normaldropdown";
 import options from "../options.json";
 import {MdClose} from "react-icons/md"
 import { AppContext } from "../AppContext";
@@ -22,10 +21,12 @@ function Firstsection() {
           <button className="text-right">add topic +</button>
           <div className="box-1__dropdown">
             <Dropdown
+              //to know which options object to use based on the id
               options={options.find((opt) => opt.id === "category").options}
               value={selectedOptions["category"]}
               onChange={(option) => handleChange(option, "category")}
               placeholder="Select category"
+              showImage={true}
             />
           </div>
         </div>
@@ -38,13 +39,14 @@ function Firstsection() {
               value={selectedOptions["topic"]}
               onChange={(option) => handleChange(option, "topic")}
               placeholder="Select a topic"
+              showImage={true}
             />
           </div>
         </div>
         <div className="box-years">
           <p className="text-left">Valid for</p>
           <div className="box-1__dropdown">
-            <Normaldropdown
+            <Dropdown
               options={options.find((opt) => opt.id === "years").options}
               value={selectedOptions["years"]}
               onChange={(option) => handleChange(option, "years")}
@@ -65,7 +67,7 @@ function Firstsection() {
         <div className="box-work">
           <p className="text-top">Assign To</p>
           <div className="box-1__dropdown">
-            <Normaldropdown
+            <Dropdown
               options={options.find((opt) => opt.id === "work").options}
               value={selectedOptions["work"]}
               onChange={(option) => handleChange(option, "work")}
@@ -78,7 +80,7 @@ function Firstsection() {
             <p className="text-left">Departments</p>
             <p className="text-right-grey">Optional</p>
             <div className="box-1__dropdown">
-              <Normaldropdown
+              <Dropdown
                 options={
                   options.find((opt) => opt.id === "departments").options
                 }
@@ -92,7 +94,7 @@ function Firstsection() {
             <p className="text-left"> Functions</p>
             <p className="text-right-grey">Optional</p>
             <div className="box-1__dropdown">
-              <Normaldropdown
+              <Dropdown
                 options={options.find((opt) => opt.id === "functions").options}
                 value={selectedOptions["functions"]}
                 onChange={(option) => handleChange(option, "functions")}

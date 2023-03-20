@@ -6,9 +6,9 @@ function Thirdsection() {
   const [counters, setCounters] = useState([0, 0, 0, 0, 0, 0]);
 
   const handleIncrement = (index) => {
-    const newCounters = [...counters];
-    newCounters[index] += 1;
-    setCounters(newCounters);
+    const newCounters = [...counters]; //copy the values of the original counters
+    newCounters[index] += 1; //increments the value at the specified index in the new array
+    setCounters(newCounters); //update the state of the counters variable with the new array of values.
   };
   const handleDecrement = (index) => {
     const newCounters = [...counters];

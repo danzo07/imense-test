@@ -1,7 +1,7 @@
 import React from "react";
 import Select from "react-select";
 
-const Dropdown = ({ options, value, onChange, placeholder }) => {
+const Dropdown = ({ options, value, onChange, placeholder,showImage }) => {
   const customStyles = {
     option: (provided) => ({
       ...provided,
@@ -37,12 +37,14 @@ const Dropdown = ({ options, value, onChange, placeholder }) => {
       value={value}
       placeholder={placeholder}
       //isClearable={true}
+      //getOptionLabel function is used to render the label for each option in the dropdown
       getOptionLabel={(option) => (
         <>
-          <img src={option.image}  width="20" height="20" />
+          {showImage && <img src={option.image} width="20" height="20" />}
           <span>{option.label}</span>
         </>
       )}
+      //getOptionValue function is used to get the value for each option
       getOptionValue={(option) => option.value}
     />
   );

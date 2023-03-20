@@ -3,7 +3,7 @@ import React, { createContext, useState } from "react";
 const AppContext = createContext();
 
 const AppContextProvider = ({ children }) => {
-  //drop down state
+  // this code updates the selectedOptions state when an option is selected from a dropdown by creating a new object with the updated value for the specific dropdown.
   const [selectedOptions, setSelectedOptions] = useState({});
   const handleChange = (option, dropdownId) => {
     setSelectedOptions((prevState) => ({
@@ -22,8 +22,10 @@ const AppContextProvider = ({ children }) => {
     setPdfFile(null);
   };
 
-//question state
+
+  //question state
   const [numQuestions, setNumQuestions] = useState(1);
+  
   const handleAddQuestion = () => {
     if (numQuestions < 5) {
       setNumQuestions(numQuestions + 1);
@@ -34,6 +36,7 @@ const AppContextProvider = ({ children }) => {
       setNumQuestions(numQuestions - 1);
     }
   };
+  
 
   return (
     <AppContext.Provider

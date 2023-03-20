@@ -15,6 +15,7 @@ function Question({ index }) {
       <div className="qst-left">
         <div className="qst-text-number">
           <p>Question 1</p>
+          //we can use anonymous fucntion
           <MdClose onClick={handleRemove} />
         </div>
         <div className="qst-text-context">
@@ -30,10 +31,10 @@ function Question({ index }) {
               <BsCheckLg />
             </div>
             <div className="small-upload">
-              <label htmlFor="small-upload">
-                <img for="" src="./upload-small.svg" alt="" />
+              <label htmlFor="small-upload-1">
+                <img src="./upload-small.svg" alt="" />
               </label>
-              <input id="small-upload" type="file" accept="image/*" required />
+              <input id="small-upload-1" type="file" accept="image/*" required />
             </div>
           </div>
         </div>
@@ -45,7 +46,7 @@ function Question({ index }) {
             </div>
             <div className="small-upload">
               <label htmlFor="small-upload">
-                <img for="" src="./upload-small.svg" alt="" />
+                <img src="./upload-small.svg" alt="" />
               </label>
               <input id="small-upload" type="file" accept="image/*" required />
             </div>

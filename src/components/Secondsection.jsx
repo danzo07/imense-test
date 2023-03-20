@@ -1,4 +1,4 @@
-import React, { useContext, useState } from "react";
+import React, { useContext } from "react";
 import Question from "./Question";
 import { AppContext } from "../AppContext";
 
@@ -11,6 +11,7 @@ function Secondsection() {
     for (let i = 0; i < numQuestions; i++) {
       questions.push(<Question key={i} />);
     }
+    
   return (
     <div className="secondsection-grid">
       <div className="header-text">
