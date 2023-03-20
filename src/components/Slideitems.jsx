@@ -40,7 +40,11 @@ function Slideitems({
             </div>
           ) : (
             <div className="value-box">
-              <button name="minus" className="minus" onClick={() => onDecrement(index)}>
+              <button
+                aria-label="minus"
+                className="minus"
+                onClick={() => onDecrement(index)}
+              >
                 <AiOutlineMinus />
               </button>
               <div className="blue-border">
@@ -51,7 +55,11 @@ function Slideitems({
                   <p>{type}</p>
                 </div>
               </div>
-              <button name="plus" className="plus" onClick={() => onIncrement(index)}>
+              <button
+                aria-label="plus"
+                className="plus"
+                onClick={() => onIncrement(index)}
+              >
                 <AiOutlinePlus />
               </button>
             </div>
